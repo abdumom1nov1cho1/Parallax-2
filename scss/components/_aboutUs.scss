@@ -1,0 +1,160 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.intro__inner {
+  min-height: 100vh;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 120vh;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .intro__title {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -60%);
+    font-size: 4.063rem;
+    line-height: 4.163rem;
+    font-weight: 700;
+    width: 30rem;
+    text-align: center;
+
+    color: $white;
+
+    font-family: $philosopher;
+
+    @media (max-width: 992px) {
+      font-size: 3.438rem;
+      line-height: 3.5rem;
+      width: 30rem;
+      top: 30%;
+      left: 60%;
+      transform: translate(-50%, -30%);
+    }
+    @media (max-width: 600px) {
+      font-size: 2.188rem;
+      line-height: 2.7rem;
+      width: 17rem;
+      top: 35%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+    }
+  }
+}
+
+.main {
+  position: absolute;
+  min-height: 120vh;
+  width: 100%;
+  background: $black;
+  overflow-x: hidden;
+}
+
+.about {
+  color: $white;
+  height: 100%;
+  width: 100%;
+
+  &__articles {
+    display: grid;
+    place-items: center;
+    gap: 3.125rem;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+
+    @media (max-width: 650px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__article {
+    max-width: 25rem;
+    width: 100%;
+    height: 25rem;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+    box-shadow: 0 5px 30px 0 rgba(255, 255, 255, 0.147);
+    overflow: hidden;
+
+    @media (max-width: 992px) {
+      height: auto;
+    }
+
+    &-header {
+      height: 25rem;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        transition: background 0.5s ease;
+      }
+
+      &:hover {
+        &::after {
+          background: transparent;
+        }
+      }
+
+      img {
+        border-radius: 5px 5px 0 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-body {
+      padding: 0.625rem;
+    }
+
+    &-title {
+      font-size: 1.875rem;
+
+      position: absolute;
+      bottom: 1.25rem;
+      left: 50%;
+
+      transform: translateX(-50%);
+      transition: opacity 0.3s ease;
+      z-index: 2;
+
+      pointer-events: none;
+    }
+
+    &-body {
+      height: 6.25rem;
+      overflow-y: auto;
+      background: rgba(28, 29, 31, 0.5);
+      transition: transform 0.5s ease;
+    }
+
+    &:hover {
+      .about__article-title {
+        opacity: 0;
+
+        @media (max-width: 992px) {
+          opacity: 1;
+        }
+      }
+
+      .about__article-body {
+        transform: translateY(-100px);
+
+        @media (max-width: 992px) {
+          transform: translateY(0px);
+        }
+      }
+    }
+  }
+}

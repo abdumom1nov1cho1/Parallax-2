@@ -1,0 +1,49 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.travel{
+	position: relative;
+	height: 120vh;
+	background:  linear-gradient(to bottom, #74d1ed, #57c8f2, #39bef7, #17b3fc, #00a7ff);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__title{
+		color: $white;
+		font-size: 4.375rem;
+		text-transform: capitalize;
+		text-align: center;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+
+		position: absolute;
+		top: 60%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		transition: all .5s ease;
+		pointer-events: none;
+
+		@media (max-width: 1020px) {
+			font-size: 3.0rem;
+		}
+
+		@media (max-width: 700px) {
+			font-size: 2.0rem;
+		}
+
+		@media (max-width: 470px) {
+			font-size: 1.5rem;
+		}
+
+	}
+
+	img{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		pointer-events: none;
+		height: inherit;
+		object-fit: cover;
+	}
+}

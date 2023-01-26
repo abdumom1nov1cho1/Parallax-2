@@ -1,0 +1,233 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// !HEADER-------------------
+
+.header {
+  background: transparent;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 8;
+
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6.25rem;
+    padding-top: 0.938rem;
+
+    .logo {
+      width: 6.25rem;
+      height: 6.25rem;
+      border-radius: 50%;
+      backdrop-filter: blur(2px);
+      background: rgba(228, 223, 223, 0.586);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 4.375rem;
+      }
+    }
+
+    .connect {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      a {
+        padding: 0.938rem;
+        border-radius: 0.625rem;
+
+        margin-right: 0.625rem;
+        display: block;
+        @media (max-width: 650px) {
+          display: none;
+        }
+      }
+    }
+
+    .telephone {
+      background: $white;
+      color: $black;
+
+      transition: background 0.5s ease;
+
+      &:hover {
+        background: #030048;
+        color: $white;
+      }
+    }
+
+    .email {
+      background: #3e85e9;
+      color: #fff;
+
+      transition: background 0.3s ease;
+    }
+
+    .nav-toggle {
+      width: 2.813rem;
+      height: 2.813rem;
+      background: #003329;
+      display: inline-block;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      span {
+        display: inline-block;
+        width: 1.563rem;
+        height: 0.188rem;
+        background: $white;
+        position: relative;
+
+        &::after,
+        &::before {
+          content: "";
+          width: 1.563rem;
+          height: 0.188rem;
+          position: absolute;
+          background: $white;
+          left: 0;
+        }
+
+        &::after {
+          bottom: 0.5rem;
+        }
+        &::before {
+          top: 0.5rem;
+        }
+      }
+    }
+  }
+}
+// !HEADER END-------------------
+// !NAVBAR-------------------
+.nav {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%)
+    brightness(140%);
+  height: 100%;
+  max-width: 33.563rem;
+  width: 100%;
+  z-index: 10;
+  transform: translateX(33.563rem);
+
+  transition: transform 0.3s ease 0.5s;
+
+  overflow-y: auto;
+
+  color: $white;
+
+  &-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease;
+
+    z-index: 9;
+  }
+
+  &-header {
+    border-bottom: $border-1;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+
+    a {
+      padding: 0.938rem;
+      border-radius: 0.625rem;
+
+      display: none;
+
+      @media (max-width: 650px) {
+        display: inline-block;
+      }
+
+      @media (max-width: 440px) {
+        display: inline-block;
+        margin: 0 0 10px 0;
+      }
+    }
+
+    .telephone {
+      background: $white;
+      color: $black;
+      margin-right: 0.625rem;
+    }
+
+    .email {
+      background: #3e85e9;
+      color: #fff;
+    }
+  }
+
+  .hide-navbar {
+    font-size: 2.5rem;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 10px;
+  }
+
+  &__list {
+    margin: 0.625rem 0 0;
+    padding: 0;
+  }
+
+  &__link {
+    display: block;
+    font-weight: 500;
+    font-size: 2rem;
+    text-transform: capitalize;
+
+    padding: 0.5rem 0.938rem;
+    color: inherit;
+
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      height: 100%;
+      width: 0px;
+
+      background: $blue;
+
+      z-index: -1;
+      transition: all 0.5s ease;
+    }
+  }
+
+  &__link:hover {
+    &::before {
+      width: 100%;
+    }
+  }
+}
+
+.nav.open {
+  transform: translateX(0);
+  transition: transform 0.5s ease;
+}
+
+.nav-overlay.open {
+  transform: translateX(0%);
+  transition: transform 0.5s ease 0.3s;
+}
+// !NAVBAR END-------------------

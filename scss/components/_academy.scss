@@ -1,0 +1,51 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.academy {
+  background: url("../../images/academy/academy-bg.png");
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  &-img {
+    max-width: 37.5rem;
+    width: 100%;
+    margin-bottom: 6.25rem;
+  }
+
+  &-title {
+    text-align: center;
+    max-width: 43.75rem;
+    width: 100%;
+    margin: 0 auto;
+
+    @media (max-width: 420px) {
+      font-size: 1.563rem;
+    }
+  }
+}
+
+.loaction {
+  width: 100%;
+}
+
+.footer {
+  width: 100%;
+  padding: 1.875rem 0;
+  text-align: center;
+
+  @media (max-width: 600px) {
+  }
+
+  @media (max-width: 600px) {
+    padding: 0.938rem 0;
+  }
+
+  p {
+    font-size: 0.875rem;
+    color: $white;
+  }
+}

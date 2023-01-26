@@ -1,0 +1,37 @@
+// !colors
+$black: #181818;
+$white: #fff;
+$dark-blue: linear-gradient(
+  to right,
+  #2f3642,
+  #283043,
+  #242a44,
+  #222343,
+  #231b41
+);
+$light-blue: linear-gradient(
+  to top,
+  #d3e3f6,
+  #c9def5,
+  #bed8f4,
+  #b3d3f3,
+  #a8cef2
+);
+$dark-5: rgba(28, 29, 31, 0.5);
+$blue: #5b9cff;
+$gray: #6d7a7c;
+$gray-light: #a8a8a8;
+
+// !border and box shadow
+$border-1: 1px solid #2b2b2b;
+$border-green: 1px solid #81becb;
+
+$shadow-1: 0px 7px 16px rgba(0, 0, 0, 0.25);
+$shadow-2: 0px -7px 16px rgba(0, 0, 0, 0.25);
+
+// !DARK AND LIGHT MODE
+
+$textColor: $white;
+$bgColor: $dark-blue;
+
+$philosopher: "Philosopher";

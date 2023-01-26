@@ -1,0 +1,36 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+html{
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border: 0;
+  outline: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+input {
+  border: none;
+  outline: none;
+}

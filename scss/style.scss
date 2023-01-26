@@ -1,0 +1,31 @@
+// ! ABSTRACTS
+@use "./abstracts/mixins";
+@use "./abstracts/variables";
+
+// ! BASE STYLES
+@use "./base/reset";
+@use "./base/typography";
+
+// ! LAYOUT STYLES
+@use "./layouts/main";
+
+
+// ! COMPONENTS
+
+@use "./components/header";
+@use "./components/aboutUs";
+@use "./components/travel";
+@use "./components/professions";
+@use "./components/websites";
+@use "./components/academy";
+// @use "./components/navbar";
+// @use "./components/headingSlider";
+// @use "./components/genre";
+// @use "./components/sidebar";
+// @use "./components/films";
+// @use "./components/collections";
+// @use "./components/contentSlider";
+// @use "./components/similarFilms";
+// @use "./components/selectionFilms";
+// @use "./components/actorsCard";
+// @use "./components/footer";

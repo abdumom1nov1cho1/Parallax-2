@@ -1,0 +1,31 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+.section-title {
+  font-size: 2.75rem;
+  line-height: 3.25rem;
+  letter-spacing: 2.5px;
+  font-weight: 700;
+  text-align: center;
+  padding: 0 0 1.875rem 0;
+  color: $white;
+
+  @media (max-width: 600px) {
+    padding: 0 0 0.938rem 0;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    letter-spacing: 1.5px;
+  }
+}
+
+.regular-text {
+  font-size: 18px;
+  color: $white;
+  line-height: 20px;
+  letter-spacing: 1px;
+
+  @media (max-width: 600px) {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
